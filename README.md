@@ -1,6 +1,6 @@
 # Roblox UI Library Documentation
 
-A modern, feature-rich UI library for Roblox with a clean design and smooth animations.
+A modern, feature-rich UI library for Roblox with a clean design and smooth animations. Made by Claude Sonnet4.5.
 
 ## Features
 
