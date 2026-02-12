@@ -1,7 +1,7 @@
 -- Example Usage of the UI Library
 -- This script shows how to use all the features
 
-local UILibrary = loadstring(game:HttpGet("YOUR_RAW_SCRIPT_URL_HERE"))()
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/SuperHackerYT/Claude-UI/refs/heads/main/UILibrary.lua"))()
 
 -- Create the main window
 local Window = UILibrary:CreateWindow({
