@@ -66,11 +66,6 @@ function UILibrary:CreateWindow(config)
     mainCorner.CornerRadius = UDim.new(0, 16)
     mainCorner.Parent = mainFrame
     
-    -- Blur effect
-    local blur = Instance.new("BlurEffect")
-    blur.Size = 10
-    blur.Parent = game.Lighting
-    
     -- Make frame translucent
     mainFrame.BackgroundTransparency = 0.15
     
@@ -149,9 +144,19 @@ function UILibrary:CreateWindow(config)
         if minimized then
             tween(mainFrame, {Size = UDim2.new(0, originalSize.X.Offset, 0, 45)}, 0.3)
             minimizeButton.Text = "□"
+            tabContainer.Visible = false
+            contentContainer.Visible = false
+            if Window.Blur then
+                Window.Blur.Enabled = false
+            end
         else
             tween(mainFrame, {Size = originalSize}, 0.3)
             minimizeButton.Text = "−"
+            tabContainer.Visible = true
+            contentContainer.Visible = true
+            if Window.Blur then
+                Window.Blur.Enabled = true
+            end
         end
     end)
     
@@ -185,7 +190,9 @@ function UILibrary:CreateWindow(config)
     closeButton.MouseButton1Click:Connect(function()
         tween(mainFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.3)
         task.wait(0.3)
-        blur:Destroy()
+        if Window.Blur then
+            Window.Blur:Destroy()
+        end
         screenGui:Destroy()
     end)
     
@@ -273,6 +280,12 @@ function UILibrary:CreateWindow(config)
     local Window = {}
     Window.Tabs = {}
     Window.CurrentTab = nil
+    
+    -- Blur effect
+    local blur = Instance.new("BlurEffect")
+    blur.Size = 10
+    blur.Parent = game.Lighting
+    Window.Blur = blur
     
     function Window:CreateTab(tabName)
         local Tab = {}
