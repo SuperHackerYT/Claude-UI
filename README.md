@@ -1,6 +1,6 @@
 # Roblox UI Library Documentation
 
-A modern, feature-rich UI library for Roblox with a clean design and smooth animations. Made by Claude Sonnet4.5.
+A modern, feature-rich UI library for Roblox with a clean design and smooth animations.
 
 ## Features
 
@@ -18,7 +18,7 @@ A modern, feature-rich UI library for Roblox with a clean design and smooth anim
 2. Load it in your script:
 
 ```lua
-local UILibrary = loadstring(game:HttpGet("YOUR_RAW_SCRIPT_URL_HERE"))()
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/SuperHackerYT/Claude-UI/refs/heads/main/UILibrary.lua"))()
 ```
 
 Or if you have it as a ModuleScript:
