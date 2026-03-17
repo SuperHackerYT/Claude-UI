@@ -145,7 +145,7 @@ label.Set("New label text")
 ## Complete Example
 
 ```lua
-local UILibrary = loadstring(game:HttpGet("YOUR_URL"))()
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/SuperHackerYT/Claude-UI/refs/heads/main/UILibrary.lua"))()
 
 -- Create window
 local Window = UILibrary:CreateWindow({
